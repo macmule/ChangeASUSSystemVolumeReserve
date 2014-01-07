@@ -35,11 +35,11 @@ sudo launchctl unload -w /Applications/Server.app/Contents/ServerRoot/System/Lib
 echo "Unloaded /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.swupdate.host.plist..."
 
 # Change the Volume Reserve Percent
-sudo defaults write ~/Desktop/swupd.plist systemVolumeReserve -int $reservePercent
+sudo defaults write /Library/Server/Software\ Update/Config/swupd/swupd.plist systemVolumeReserve -int $reservePercent
 echo "Set systemVolumeReserve value to $reservePercent%..."
 
-sudo chown root:_softwareupdate ~/Desktop/swupd.plist
-sudo chmod 755 ~/Desktop/swupd.plist
+sudo chown root:_softwareupdate /Library/Server/Software\ Update/Config/swupd/swupd.plist
+sudo chmod 755 /Library/Server/Software\ Update/Config/swupd/swupd.plist
 echo "Corrected permissions on Library/Server/Software Update/Config/swupd.plist..."
 
 # Reload com.apple.swupdate.sync.plist
